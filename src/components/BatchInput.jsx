@@ -1,10 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { useState } from "react";
 import OverlayWrapper from "./OverlayWrapper";
+import axios from "../instance.js";
+import { error } from "../helper/hottoast.js";
 
 const BatchInput = () => {
   const [isOverlayActive, setIsOverlayActive] = useState(false);
+  const [batchInput, setBatchInput] = useState(0);
+  const navigate = useNavigate();
+
+  const verifyBatch = async () => {
+    try {
+      setIsOverlayActive(true);
+      const responce = await axios.post("/batch/verify-batch-code", {
+        code: batchInput,
+      });
+      setIsOverlayActive(false);
+      navigate("/thank-you-msg");
+    } catch (err) {
+      setIsOverlayActive(false);
+      navigate("/wrong-batch-code");
+    }
+  };
 
   return (
     <OverlayWrapper isOverlayActive={isOverlayActive}>
@@ -51,6 +69,7 @@ const BatchInput = () => {
 
               <div className="relative ">
                 <input
+                  onChange={(e) => setBatchInput(e.target.value)}
                   className="outline-none w-full rounded-[10px] border border-textBlack py-[13.5px] pl-[10px] pr-9 bg-[#F8F8F859] font-Poppins font-semibold text-sm tracking-[0.06em] text-left text-[#373737] placeholder:text-[#373737]"
                   placeholder="BATCH NUMBER"
                   inputMode="tel"
@@ -65,7 +84,7 @@ const BatchInput = () => {
               </div>
 
               <p
-                onClick={() => setIsOverlayActive(true)}
+                // onClick={() => setIsOverlayActive(true)}
                 className="font-Poppins text-[10px] ml-2 font-normal leading-[14px]  text-black/60 "
               >
                 *Tap on camera to upload your batch code image
@@ -73,19 +92,11 @@ const BatchInput = () => {
             </div>
 
             <Button
+              onClick={verifyBatch}
               className={`py-[14px]  max-w-[19.5rem] text-nowrap  rounded-[0.875rem] border-[2px]  border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem] px-[7.75rem]`}
               // navigateUrl={"/wrong-batch-code"}
-              navigateUrl={"/thank-you-msg"}
-
               title={"Submit"}
             />
-
-            {/* <Button
-              className={`py-4 rounded-[0.875rem] border-[2px]  border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem] px-[7.75rem]`}
-              navigateUrl={"/thank-you-msg"}
-              title={"Submit"}
-            /> */}
-
           </div>
         </div>
       </div>

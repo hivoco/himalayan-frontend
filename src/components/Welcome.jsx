@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
 const Welcome = () => {
+  const navigate = useNavigate();
   // bg-[length:100%_100%] cover cent percent width and height of the container
   //  bg-flowery-bg  bg-cover  bg-center bg-no-repeat bg-fixed
   return (
@@ -34,8 +36,9 @@ const Welcome = () => {
 
       <div className="flex flex-col gap-y-3 ">
         <Button
+          onClick={() => navigate("/batch-input")}
           className={`max-w-[19.5rem] text-nowrap self-center py-[14px] rounded-[0.8625rem] border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem] px-[6.75rem]`}
-          navigateUrl={"/batch-input"}
+          // navigateUrl={"/batch-input"}
           title={"Get Started"}
         />
         <img

@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
 const WrongBatchCode = () => {
+  const navigate = useNavigate();
   return (
     <div className="  h-svh  bg-design-bg  bg-cover py-[2.125rem] flex flex-col  justify-between items-  bg-center bg-no-repeat bg-fixed  ">
       <img
@@ -22,17 +24,14 @@ const WrongBatchCode = () => {
           alt="curly-pattern image"
         />
 
-
         <p className="font-Poppins  font-normal text-base leading-[20.8px]  text-center text-textBlack ">
           Please enter the correct <br /> batch number
         </p>
       </div>
 
-
-
       <Button
+        onClick={() => navigate("/batch-input")}
         className={`py-[14px] max-w-[19.5rem] text-nowrap px-[7.15625rem] mx-auto rounded-[0.875rem] border-[2px] border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem]`}
-        navigateUrl={"/batch-input"}
         title={"Try Again"}
       />
     </div>
