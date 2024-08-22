@@ -9,8 +9,9 @@ const Welcome = () => {
     <div className="h-svh bg-flowery-bg  bg-cover  bg-center bg-no-repeat bg-fixed  flex flex-col gap-y-[107x] justify-between pt-[2.1375rem] pb-[0.89375rem]">
       {/* <div className="flex flex-col gap-y-[124px]"> */}
       <Button
+        onClick={() => window.open("https://himalayansaffron.in", "_blank")}
         className={`mx-3 max-w-[6.5625rem] self-end py-[0.66rem] px-[2.56rem] border-white rounded-[0.575rem] text-[0.70rem] font-normal leading-[0.90rem]`}
-        navigateUrl={""}
+        // navigateUrl={""}
         title={"Skip"}
       />
 

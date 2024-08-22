@@ -1,6 +1,30 @@
+import { useEffect, useState } from "react";
 import Button from "./Button";
+import axios from "../instance.js";
 
 const ThankYouMsg = () => {
+  const [usermessage, setUsermessage] = useState({
+    name: "",
+    image: "",
+    message: "",
+    description: "",
+  });
+
+  useEffect(() => {
+    const getRandomMessage = async () => {
+      const res = await axios.get("/message/fetch-random-message");
+
+      setUsermessage({
+        ...usermessage,
+        name: res.data.name,
+        image: res.data.image,
+        message: res.data.message,
+        description: res.data.description,
+      });
+    };
+    getRandomMessage();
+  }, []);
+
   return (
     <div className="h-svh bg-flowery-bg  bg-cover  bg-center bg-no-repeat bg-fixed py-[2.125rem]  flex flex-col justify-between  gap-y-5">
       <div className="flex flex-1 flex-col items-center gap-[9px] ">
@@ -20,12 +44,13 @@ const ThankYouMsg = () => {
           <div className="relative z-10 w-[10.3125rem] h-[19.875rem] rounded-[9.9375rem] overflow-hidden  mx-auto">
             <img
               className="max-w-none w-full h-full object-cover object-center"
-              src={"/images/woman.jpeg"}
+              src={usermessage.image ? usermessage.image : "/images/woman.jpeg"}
+              // src={"/images/woman.jpeg"}
               alt="person's image"
             />
 
             <h2 className="w-full py-2 bottom-5 left-0  absolute font-Inter text-[12.71px] font-semibold leading-[15.4px] text-center text-white bg-black/70">
-              Zara Hussain
+              {usermessage.name ? usermessage.name : "Zara Hussain"}
             </h2>
           </div>
         </div>
@@ -39,22 +64,29 @@ const ThankYouMsg = () => {
             </h1>
 
             <p className="text-textPink font-Inter text-sm font-medium leading-[1.06rem] text-center">
-              Together, we can continue to bring you <br /> the finest saffron.
+              {usermessage.message
+                ? usermessage.message
+                : "Together, we can continue to bring you <br /> the finest saffron."}
             </p>
           </div>
 
-          <p className="font-Inter font-normal text-[13px] leading-[0.99rem]  text-center text-black/80">
-            Discover the journey of pure saffron from the <br /> Himalayas.
+          <p
+            className="font-Inter font-normal text-[13px] leading-[0.99rem]  text-center text-black/80"
+            dangerouslySetInnerHTML={{
+              __html: usermessage.description
+                ? usermessage.description
+                : `Discover the journey of pure saffron from the <br /> Himalayas.
             Learn more about it's purity test, <br /> delicious dishes etc &
             explore the magic of
-            <br /> Kashmiri saffron!
-          </p>
-
+            <br /> Kashmiri saffron!`,
+            }}
+          ></p>
         </div>
 
         <Button
+          onClick={() => window.open("https://himalayansaffron.in", "_blank")}
           className={`self-center max-w-[19.5rem] text-nowrap font-Poppins py-[14px] rounded-[14px] border-white/50 font-semibold text-[17px] leading-[22px] px-[105px]`}
-          navigateUrl={"/batch-input"}
+          // navigateUrl={"/batch-input"}
           title={"Explore Now"}
         />
       </div>
