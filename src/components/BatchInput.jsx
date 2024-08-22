@@ -74,11 +74,13 @@ const BatchInput = () => {
 
             <Button
               className={`py-[14px]  max-w-[19.5rem] text-nowrap  rounded-[0.875rem] border-[2px]  border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem] px-[7.75rem]`}
-              navigateUrl={"/wrong-batch-code"}
+              // navigateUrl={"/wrong-batch-code"}
+              navigateUrl={"/thank-you-msg"}
+
               title={"Submit"}
             />
-{/* 
-            <Button
+
+            {/* <Button
               className={`py-4 rounded-[0.875rem] border-[2px]  border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem] px-[7.75rem]`}
               navigateUrl={"/thank-you-msg"}
               title={"Submit"}
