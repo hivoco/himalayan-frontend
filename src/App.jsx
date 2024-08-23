@@ -6,6 +6,7 @@ import MoreInformation from "./components/MoreInformation";
 import WrongBatchCode from "./components/WrongBatchCode";
 import OverlayWrapper from "./components/OverlayWrapper";
 import ThankYouMsg from "./components/ThankYouMsg";
+import CameraCapture from "./components/CameraCapture";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="more-information" element={<MoreInformation />} />
             <Route path="wrong-batch-code" element={<WrongBatchCode />} />
             <Route path="thank-you-msg" element={<ThankYouMsg />} />
+            <Route path="capture-your-batch-code" element={<CameraCapture />} />
 
             <Route
               path="/overlay"
