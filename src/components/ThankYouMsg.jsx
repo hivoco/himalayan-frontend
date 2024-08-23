@@ -104,7 +104,7 @@ const ThankYouMsg = () => {
 
         <Button
           onClick={() => window.open("https://himalayansaffron.in", "_blank")}
-          className={`self-center max-w-[19.5rem] text-nowrap font-Poppins py-[14px] rounded-[14px] border-white/50 font-semibold text-[17px] leading-[22px] px-[105px] ${
+          className={`bg-primaryPurple self-center max-w-[19.5rem] text-nowrap font-Poppins py-[14px] rounded-[14px] border-white/50 font-semibold text-[17px] leading-[22px] px-[105px] ${
             animate
               ? "translate-y-0 opacity-100 scale-100 transition-all duration-1000 delay-100 ease-in-out"
               : "translate-y-40 opacity-0 scale-50"

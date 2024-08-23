@@ -38,6 +38,7 @@ const BatchInput = () => {
       const stream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: { exact: "environment" } }, // Forces the use of the back camera
       });
+      // const stream = await navigator.mediaDevices.getUserMedia({ video: true });
       videoRef.current.srcObject = stream;
       videoRef.current.play();
       setStreaming(true);
@@ -132,6 +133,7 @@ const BatchInput = () => {
                       placeholder="BATCH NUMBER"
                       // inputMode="tel"
                       type="text"
+                      value={batchInput}
                     />
 
                     <img
@@ -156,9 +158,8 @@ const BatchInput = () => {
                 <Button
                   onClick={verifyBatch}
                   className={`py-[14px]  max-w-[19.5rem] text-nowrap  rounded-[0.875rem] border-[2px]  border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem] px-[7.75rem] ${
-                    batchInput == "" && "bg-gray-500"
-                  } ${batchInput == " " && "bg-gray-500"}`}
-                  // navigateUrl={"/wrong-batch-code"}
+                    batchInput == "" ? "bg-gray-500" : "bg-primaryPurple"
+                  } `}
                   title={"Submit"}
                 />
               </div>
@@ -178,10 +179,10 @@ const BatchInput = () => {
           <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
           {streaming && (
             <div
-              className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full bg-gray-300 border border-black"
+              className="absolute flex justify-center items-center bottom-28 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full bg-gray-300 border border-black"
               onClick={sendImageToAPI}
             >
-              <img src="/images/camera.png" className="rounded-full" alt="" />
+              <img src="/svgs/camera.svg" className="rounded-full" alt="" />
             </div>
           )}
         </div>

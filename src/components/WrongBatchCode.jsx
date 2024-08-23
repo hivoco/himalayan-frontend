@@ -31,7 +31,7 @@ const WrongBatchCode = () => {
 
       <Button
         onClick={() => navigate("/batch-input")}
-        className={`py-[14px] max-w-[19.5rem] text-nowrap px-[7.15625rem] mx-auto rounded-[0.875rem] border-[2px] border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem]`}
+        className={`py-[14px] bg-primaryPurple max-w-[19.5rem] text-nowrap px-[7.15625rem] mx-auto rounded-[0.875rem] border-[2px] border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem]`}
         title={"Try Again"}
       />
     </div>
