@@ -7,7 +7,7 @@ import { error } from "../helper/hottoast.js";
 
 const BatchInput = () => {
   const [isOverlayActive, setIsOverlayActive] = useState(false);
-  const [batchInput, setBatchInput] = useState(0);
+  const [batchInput, setBatchInput] = useState("");
   const [isCameraOpened, setIsCameraOpened] = useState(false);
   const navigate = useNavigate();
 
@@ -139,7 +139,7 @@ const BatchInput = () => {
                         startCamera();
                         setIsCameraOpened(true);
                       }}
-                      className="absolute right-3 top-1/2 -translate-y-1/2"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 hover:cursor-pointer"
                       src="/svgs/camera.svg"
                       alt="camera icon"
                     />
@@ -169,13 +169,13 @@ const BatchInput = () => {
       {isCameraOpened && (
         <div className="w-screen h-screen relative overflow-hidden">
           <video
-            className="w-full h-full"
             ref={videoRef}
+            className="w-full h-full object-cover"
             style={{ display: streaming ? "block" : "none" }}
+            autoPlay
+            playsInline
           ></video>
           <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
-
-          {/* {!streaming && <button onClick={startCamera}>Start Camera</button>} */}
           {streaming && (
             <div
               className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full bg-gray-300 border border-black"
