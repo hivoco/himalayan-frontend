@@ -122,7 +122,11 @@ const BatchInput = () => {
                     </p>
 
                     <Link className="w-3 h-3" to={"/more-information"}>
-                      <img src="/svgs/info.svg" alt="info icon" />
+                      <img
+                        className="hover:cursor-pointer"
+                        src="/svgs/info.svg"
+                        alt="info icon"
+                      />
                     </Link>
                   </div>
 
