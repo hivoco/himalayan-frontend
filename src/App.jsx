@@ -19,7 +19,6 @@ const App = () => {
             <Route path="more-information" element={<MoreInformation />} />
             <Route path="wrong-batch-code" element={<WrongBatchCode />} />
             <Route path="thank-you-msg" element={<ThankYouMsg />} />
-            <Route path="capture-your-batch-code" element={<CameraCapture />} />
 
             <Route
               path="/overlay"

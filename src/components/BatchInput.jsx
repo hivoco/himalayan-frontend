@@ -36,7 +36,7 @@ const BatchInput = () => {
   const startCamera = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
-        video: true,
+        video: { facingMode: { exact: "environment" } }, // Forces the use of the back camera
       });
       videoRef.current.srcObject = stream;
       videoRef.current.play();
