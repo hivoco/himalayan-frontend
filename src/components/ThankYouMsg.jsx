@@ -69,9 +69,9 @@ const ThankYouMsg = () => {
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col gap-4">
+      <div className="flex flex-1 flex-col gap-4 ">
         <div
-          className={`flex flex-1 flex-col items-center gap-1 px-3 ${
+          className={`flex flex-1 flex-col items-center gap-1  mx-auto max-w-[19.5rem]  ${
             animate
               ? " opacity-100  transition-all duration-500 delay-100 ease-in-out"
               : " opacity-0 "
