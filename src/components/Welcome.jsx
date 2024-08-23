@@ -47,7 +47,7 @@ const Welcome = () => {
           </h1>
 
           <p
-            className={`font-Poppins font-normal text-[16px] leading-6  text-center text-black/80 ${
+            className={`font-Poppins font-normal text-[15px] leading-6  text-center text-black/80 ${
               animate
                 ? " opacity-100transition-all duration-500 delay-1000 ease-in-out"
                 : " opacity-0 "

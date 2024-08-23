@@ -182,7 +182,7 @@ const BatchInput = () => {
               className="absolute flex justify-center items-center bottom-28 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full bg-gray-300 border border-black"
               onClick={sendImageToAPI}
             >
-              <img src="/svgs/camera.svg" className="rounded-full" alt="" />
+              <img className="w-9 h-9" src="/svgs/camera.svg" alt="" />
             </div>
           )}
         </div>

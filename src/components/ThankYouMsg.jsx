@@ -78,7 +78,7 @@ const ThankYouMsg = () => {
           }`}
         >
           <div className=" flex flex-col gap-1">
-            <h1 className="text-textPink font-Inter text-base font-bold leading-[1.21rem] text-center">
+            <h1 className="text-textPink font-Inter text-lg font-bold leading-[1.21rem] text-center">
               Thank you for supporting us.{" "}
             </h1>
 
@@ -90,7 +90,7 @@ const ThankYouMsg = () => {
           </div>
 
           <p
-            className="font-Inter font-normal text-[13px] leading-[0.99rem]  text-center text-black/80"
+            className="font-Inter font-normal text-[13px] leading-[0.99rem] pt-3  text-center text-black/80"
             dangerouslySetInnerHTML={{
               __html: usermessage.description
                 ? usermessage.description
