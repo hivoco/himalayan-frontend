@@ -146,6 +146,8 @@ const BatchInput = () => {
                       // inputMode="tel"
                       type="text"
                       value={batchInput}
+                      maxLength="10"
+                      minLength="1"
                     />
 
                     <img
