@@ -2,8 +2,9 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import Button from "./Button";
 import { useRef, useState } from "react";
 import OverlayWrapper from "./OverlayWrapper";
-import axios from "../instance.js";
+import axios1 from "../instance.js";
 import { error } from "../helper/hottoast.js";
+import axios from "axios";
 
 const BatchInput = () => {
   const [isOverlayActive, setIsOverlayActive] = useState(false);
@@ -17,7 +18,7 @@ const BatchInput = () => {
     }
     try {
       setIsOverlayActive(true);
-      const responce = await axios.post("/batch/verify-batch-code", {
+      const responce = await axios1.post("/batch/verify-batch-code", {
         code: batchInput,
       });
       setIsOverlayActive(false);
@@ -63,22 +64,29 @@ const BatchInput = () => {
     const imageDataUrl = canvas.toDataURL("image/jpeg");
     return imageDataUrl;
   };
+
+  function removeBase64Prefix(base64String) {
+    return base64String.replace(/^data:image\/jpeg;base64,/, "");
+  }
+
   const sendImageToAPI = async () => {
     const imageDataUrl = captureImage();
     console.log("first", imageDataUrl);
     setIsCameraOpened(false);
 
-    // try {
-    //   const response = await axios.post(
-    //     "https://your-api-endpoint.com/upload",
-    //     {
-    //       image: imageDataUrl,
-    //     }
-    //   );
-    //   console.log("Image uploaded:", response.data);
-    // } catch (error) {
-    //   console.error("Error uploading image:", error);
-    // }
+    try {
+      const response = await axios.post(
+        "https://scope-mag.interactivedemos.io/api/number",
+        {
+          image: removeBase64Prefix(imageDataUrl),
+        }
+      );
+      console.log("re", response.data.text);
+      setBatchInput(response.data.text);
+    } catch (err) {
+      error(`Batch number not found`);
+      console.error("Error uploading image:", err);
+    }
   };
 
   return (
