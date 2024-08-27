@@ -21,6 +21,14 @@ const BatchInput = () => {
 
   useEffect(() => {
     const getRandomMessage = async () => {
+      const storedFarmers = localStorage.getItem("farmers_data");
+      if (storedFarmers) {
+        const userObject = JSON.parse(storedFarmers);
+        setUsermessage({
+          ...userObject,
+        });
+        return;
+      }
       const res = await axios.get("/message/fetch-random-message");
 
       setUsermessage({
@@ -44,6 +52,7 @@ const BatchInput = () => {
         code: batchInput,
       });
       setIsOverlayActive(false);
+      localStorage.setItem("farmers_data", JSON.stringify(usermessage));
       navigate("/thank-you-msg", { state: usermessage });
     } catch (err) {
       setIsOverlayActive(false);
