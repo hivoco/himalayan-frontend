@@ -57,7 +57,7 @@ const ThankYouMsg = () => {
           <div className="relative z-10 w-[10.3125rem] h-[19.875rem] rounded-[9.9375rem] overflow-hidden  mx-auto">
             <img
               className="max-w-none w-full h-full object-cover object-center"
-              src={usermessage.image ? usermessage.image : "/images/woman.jpeg"}
+              src={usermessage.image ? usermessage.image : "/images/user.png"}
               // src={"/images/woman.jpeg"}
               alt="person's image"
             />
