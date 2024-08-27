@@ -1,16 +1,38 @@
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import Button from "./Button";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import OverlayWrapper from "./OverlayWrapper";
 import axios1 from "../instance.js";
 import { error } from "../helper/hottoast.js";
-import axios from "axios";
+import axios from "../instance.js";
 
 const BatchInput = () => {
   const [isOverlayActive, setIsOverlayActive] = useState(false);
   const [batchInput, setBatchInput] = useState("");
   const [isCameraOpened, setIsCameraOpened] = useState(false);
   const navigate = useNavigate();
+
+  const [usermessage, setUsermessage] = useState({
+    name: "",
+    image: "",
+    message: "",
+    description: "",
+  });
+
+  useEffect(() => {
+    const getRandomMessage = async () => {
+      const res = await axios.get("/message/fetch-random-message");
+
+      setUsermessage({
+        ...usermessage,
+        name: res.data.name,
+        image: res.data.image,
+        message: res.data.message,
+        description: res.data.description,
+      });
+    };
+    getRandomMessage();
+  }, []);
 
   const verifyBatch = async () => {
     if (batchInput == "") {
@@ -22,7 +44,7 @@ const BatchInput = () => {
         code: batchInput,
       });
       setIsOverlayActive(false);
-      navigate("/thank-you-msg");
+      navigate("/thank-you-msg", { state: usermessage });
     } catch (err) {
       setIsOverlayActive(false);
       navigate("/wrong-batch-code");
@@ -101,6 +123,7 @@ const BatchInput = () => {
             <div className="flex flex-1 flex-col    gap-y-16">
               <div className="flex flex-1 flex-col gap-12">
                 <img
+                  onClick={() => navigate("/")}
                   className="max-h-[3.25rem]  max-w-full  object-contain self-center"
                   src="/images/himalayan-logo.png"
                   alt="logo"

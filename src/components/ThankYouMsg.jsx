@@ -1,29 +1,16 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import Button from "./Button";
-import axios from "../instance.js";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ThankYouMsg = () => {
-  const [usermessage, setUsermessage] = useState({
-    name: "",
-    image: "",
-    message: "",
-    description: "",
-  });
+  const navigate = useNavigate();
+  const location = useLocation();
+  const state = location.state;
+  const [usermessage, setUsermessage] = useState({});
 
   useEffect(() => {
-    const getRandomMessage = async () => {
-      const res = await axios.get("/message/fetch-random-message");
-
-      setUsermessage({
-        ...usermessage,
-        name: res.data.name,
-        image: res.data.image,
-        message: res.data.message,
-        description: res.data.description,
-      });
-    };
-    getRandomMessage();
-  }, []);
+    setUsermessage({ ...state });
+  }, [location]);
 
   const [animate, setAnimate] = useState(false);
   useLayoutEffect(() => {
@@ -36,6 +23,7 @@ const ThankYouMsg = () => {
     <div className="h-svh bg-flowery-bg  bg-cover  bg-center bg-no-repeat bg-fixed py-[2.125rem]  flex flex-col justify-between  gap-y-5">
       <div className="flex flex-1 flex-col items-center gap-[20px] ">
         <img
+          onClick={() => navigate("/")}
           className="max-h-[52px] max-w-full h-auto object-contain self-center"
           src="/images/himalayan-logo.png"
           alt="logo"
