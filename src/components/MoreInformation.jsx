@@ -15,7 +15,7 @@ const MoreInformation = () => {
         />
       </div>
 
-      <p className="font-Poppins text-base text-black leading-[23.65px] text-center">
+      <p className="font-Poppins text-base text-black leading-[23.65px] text-center pb-10">
         You may find the batch number <br />
         here on your package
       </p>

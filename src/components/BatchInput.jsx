@@ -75,7 +75,7 @@ const BatchInput = () => {
     setIsCameraOpened(false);
 
     try {
-        setIsOverlayActive(true);
+      setIsOverlayActive(true);
       const response = await axios.post(
         "https://scope-mag.interactivedemos.io/api/number",
         {
@@ -85,9 +85,9 @@ const BatchInput = () => {
       console.log("re", response.data.text);
 
       setBatchInput(response.data.text);
-        setIsOverlayActive(false);
+      setIsOverlayActive(false);
     } catch (err) {
-        setIsOverlayActive(false);
+      setIsOverlayActive(false);
       error(`Batch number not found`);
       console.error("Error uploading image:", err);
     }

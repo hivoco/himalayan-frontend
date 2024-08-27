@@ -34,7 +34,7 @@ const ThankYouMsg = () => {
 
   return (
     <div className="h-svh bg-flowery-bg  bg-cover  bg-center bg-no-repeat bg-fixed py-[2.125rem]  flex flex-col justify-between  gap-y-5">
-      <div className="flex flex-1 flex-col items-center gap-[9px] ">
+      <div className="flex flex-1 flex-col items-center gap-[20px] ">
         <img
           className="max-h-[52px] max-w-full h-auto object-contain self-center"
           src="/images/himalayan-logo.png"
