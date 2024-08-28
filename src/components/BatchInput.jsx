@@ -21,7 +21,7 @@ const BatchInput = () => {
 
   useEffect(() => {
     const getRandomMessage = async () => {
-      const storedFarmers = localStorage.getItem("farmers_data");
+      const storedFarmers = localStorage.getItem(batchInput);
       if (storedFarmers) {
         const userObject = JSON.parse(storedFarmers);
         setUsermessage({
@@ -40,7 +40,7 @@ const BatchInput = () => {
       });
     };
     getRandomMessage();
-  }, []);
+  }, [batchInput]);
 
   const verifyBatch = async () => {
     if (batchInput == "") {
@@ -52,7 +52,9 @@ const BatchInput = () => {
         code: batchInput,
       });
       setIsOverlayActive(false);
-      localStorage.setItem("farmers_data", JSON.stringify(usermessage));
+      // await getRandomMessage();
+      localStorage.setItem(batchInput, JSON.stringify(usermessage));
+
       navigate("/thank-you-msg", { state: usermessage });
     } catch (err) {
       setIsOverlayActive(false);

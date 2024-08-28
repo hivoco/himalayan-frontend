@@ -51,7 +51,7 @@ const ThankYouMsg = () => {
             />
 
             <h2 className="w-full py-2 bottom-5 left-0  absolute font-Inter text-[12.71px] font-semibold leading-[15.4px] text-center text-white bg-black/70">
-              {usermessage.name ? usermessage.name : "Zara Hussain"}
+              {usermessage.name ? usermessage.name : "Farmer's Name"}
             </h2>
           </div>
         </div>
@@ -73,7 +73,7 @@ const ThankYouMsg = () => {
             <p className="text-textPink font-Inter text-sm font-medium leading-[1.06rem] text-center">
               {usermessage.message
                 ? usermessage.message
-                : "Together, we can continue to bring you <br /> the finest saffron."}
+                : "Together, we can continue to bring you  the finest saffron."}
             </p>
           </div>
 
