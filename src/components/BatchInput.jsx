@@ -104,9 +104,7 @@ const BatchInput = () => {
 
   const sendImageToAPI = async () => {
     const imageDataUrl = captureImage();
-    console.log("first", imageDataUrl);
     setIsCameraOpened(false);
-
     try {
       setIsOverlayActive(true);
       const response = await axios.post(
@@ -115,14 +113,12 @@ const BatchInput = () => {
           image: removeBase64Prefix(imageDataUrl),
         }
       );
-      console.log("re", response.data.text);
 
       setBatchInput(response.data.text);
       setIsOverlayActive(false);
     } catch (err) {
       setIsOverlayActive(false);
       error(`Batch number not found`);
-      console.error("Error uploading image:", err);
     }
   };
 
@@ -153,7 +149,7 @@ const BatchInput = () => {
                   <p className="font-Poppins font-normal text-sm  text-center text-textBlack/80 ">
                     Contribute to the well-being of our
                     <br /> Kashmiri Saffron Farmers who bring
-                    <br /> the finest saffron to your table this
+                    <br /> one of the finest saffron to your table this
                     <br />
                     <span className="font-semibold ">Himalayan Day!</span>
                   </p>

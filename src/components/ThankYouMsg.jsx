@@ -71,9 +71,7 @@ const ThankYouMsg = () => {
             </h1>
 
             <p className="text-textPink font-Inter text-sm font-medium leading-[1.06rem] text-center">
-              {usermessage.message
-                ? usermessage.message
-                : "Together, we can continue to bring you  the finest saffron."}
+              Together, we can continue to bring you one of the finest saffron.
             </p>
           </div>
 
