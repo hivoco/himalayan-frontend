@@ -71,7 +71,7 @@ const ThankYouMsg = () => {
             </h1>
           </div>
 
-          <p className="font-Inter font-normal text-[15px] leading-[0.99rem] pt-3  text-center text-black/80">
+          <p className="font-Inter font-normal text-[15px] leading-[1.4rem] pt-3  text-center text-black/80">
             {usermessage?.name} is grateful for your <br /> contribution in the
             training she receives.
           </p>
