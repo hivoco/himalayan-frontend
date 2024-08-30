@@ -43,7 +43,7 @@ const BatchInput = () => {
   }, [batchInput]);
 
   const verifyBatch = async () => {
-    if (batchInput == "") {
+    if (batchInput.trim() == "") {
       return;
     }
     try {
