@@ -66,26 +66,15 @@ const ThankYouMsg = () => {
           }`}
         >
           <div className=" flex flex-col gap-1">
-            <h1 className="text-textPink font-Inter text-lg font-bold leading-[1.21rem] text-center">
-              Thank you for supporting us.{" "}
+            <h1 className="text-textPink font-Inter text-xl font-bold leading-[1.21rem] text-center">
+              Thank you!
             </h1>
-
-            <p className="text-textPink font-Inter text-sm font-medium leading-[1.06rem] text-center">
-              Together, we can continue to bring you one of the finest saffron.
-            </p>
           </div>
 
-          <p
-            className="font-Inter font-normal text-[13px] leading-[0.99rem] pt-3  text-center text-black/80"
-            dangerouslySetInnerHTML={{
-              __html: usermessage.description
-                ? usermessage.description
-                : `Discover the journey of pure saffron from the <br /> Himalayas.
-            Learn more about it's purity test, <br /> delicious dishes etc &
-            explore the magic of
-            <br /> Kashmiri saffron!`,
-            }}
-          ></p>
+          <p className="font-Inter font-normal text-[13px] leading-[0.99rem] pt-3  text-center text-black/80">
+            {usermessage?.name} is grateful for your contribution in the
+            training she receives.
+          </p>
         </div>
 
         <Button

@@ -43,7 +43,7 @@ const Welcome = () => {
                 : " opacity-0 scale-0"
             }`}
           >
-            Celebrate Himalayan <br /> day with us!
+            This Himalayan Day
           </h1>
 
           <p
@@ -53,8 +53,10 @@ const Welcome = () => {
                 : " opacity-0 "
             }`}
           >
-            This Himalayan day let us take <br /> a stand to uplift the
-            livelihood <br /> of the Kashmiri Saffron farmers
+            Himalayan takes another step <br /> to{" "}
+            <span className="text-textPink font-Poppins font-bold text-[15px] leading-6  text-center">
+              help the Himalayan <br /> Community.
+            </span>
           </p>
         </div>
       </div>

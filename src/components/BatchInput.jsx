@@ -138,7 +138,7 @@ const BatchInput = () => {
 
                 <div className="flex flex-1 flex-col gap-4 ">
                   <h1 className="text-textPink  font-Poppins text-xl leading-[30px] font-bold  text-center text-nowrap">
-                    Make a difference today!
+                    Join us in helping Kashmiri <br /> Saffron Farmers
                   </h1>
                   <img
                     className="h-7 self-center"
@@ -147,11 +147,12 @@ const BatchInput = () => {
                   />
 
                   <p className="font-Poppins font-normal text-sm  text-center text-textBlack/80 ">
-                    Contribute to the well-being of our
-                    <br /> Kashmiri Saffron Farmers who bring
-                    <br /> one of the finest saffron to your table this
-                    <br />
-                    <span className="font-semibold ">Himalayan Day!</span>
+                    With every pack you buy, you support <br /> farmers impacted
+                    by declining Saffron <br /> yields and help them receive
+                    &nbsp;
+                    <span className="text-textPink font-Poppins font-bold text-sm  text-center ">
+                      training in <br /> modern farming practices
+                    </span>
                   </p>
                 </div>
               </div>

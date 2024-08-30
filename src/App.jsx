@@ -6,7 +6,7 @@ import MoreInformation from "./components/MoreInformation";
 import WrongBatchCode from "./components/WrongBatchCode";
 import OverlayWrapper from "./components/OverlayWrapper";
 import ThankYouMsg from "./components/ThankYouMsg";
-import CameraCapture from "./components/CameraCapture";
+
 
 const App = () => {
   return (
