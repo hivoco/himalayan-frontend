@@ -149,9 +149,8 @@ const BatchInput = () => {
                   <p className="font-Poppins font-normal text-sm  text-center text-textBlack/80 ">
                     With every pack you buy, you support <br /> farmers impacted
                     by declining Saffron <br /> yields and help them receive
-                    &nbsp;
-                    <span className="text-textPink font-Poppins font-bold text-sm  text-center ">
-                      training in <br /> modern farming practices
+                    <span className="text-textPink font-Poppins font-bold text-sm  text-center">
+                      &nbsp;training in <br /> modern farming practices.
                     </span>
                   </p>
                 </div>
