@@ -21,7 +21,7 @@ const ThankYouMsg = () => {
 
   return (
     <div className="h-svh bg-flowery-bg  bg-cover  bg-center bg-no-repeat bg-fixed py-[2.125rem]  flex flex-col justify-between  gap-y-5">
-      <div className="flex flex-1 flex-col items-center gap-[20px] ">
+      <div className="flex flex-1 flex-col items-center gap-[25px] ">
         <img
           onClick={() => navigate("/")}
           className="max-h-[52px] max-w-full h-auto object-contain self-center"
@@ -66,13 +66,13 @@ const ThankYouMsg = () => {
           }`}
         >
           <div className=" flex flex-col gap-1">
-            <h1 className="text-textPink font-Inter text-xl font-bold leading-[1.21rem] text-center">
+            <h1 className="text-textPink font-Inter text-[22px] font-bold leading-[1.21rem] text-center">
               Thank you!
             </h1>
           </div>
 
-          <p className="font-Inter font-normal text-[13px] leading-[0.99rem] pt-3  text-center text-black/80">
-            {usermessage?.name} is grateful for your contribution in the
+          <p className="font-Inter font-normal text-[15px] leading-[0.99rem] pt-3  text-center text-black/80">
+            {usermessage?.name} is grateful for your <br /> contribution in the
             training she receives.
           </p>
         </div>
