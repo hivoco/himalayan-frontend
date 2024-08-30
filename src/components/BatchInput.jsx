@@ -206,7 +206,7 @@ const BatchInput = () => {
                 <Button
                   onClick={verifyBatch}
                   className={`py-[14px]  max-w-[19.5rem] text-nowrap  rounded-[0.875rem] border-[2px]  border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem] px-[7.75rem] ${
-                    batchInput == "" ? "bg-gray-500" : "bg-primaryPurple"
+                    batchInput.trim() == "" ? "bg-gray-500" : "bg-primaryPurple"
                   } `}
                   title={"Submit"}
                 />
