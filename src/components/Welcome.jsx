@@ -35,7 +35,7 @@ const Welcome = () => {
           alt="logo"
         />
 
-        <div className=" flex flex-col gap-y-[24.7px]">
+        <div className=" flex flex-col gap-y-4">
           <h1
             className={`text-textPink font-Poppins text-[22px] font-bold leading-[1.625rem] text-center ${
               animate
