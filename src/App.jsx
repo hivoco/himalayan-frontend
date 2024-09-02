@@ -6,7 +6,7 @@ import MoreInformation from "./components/MoreInformation";
 import WrongBatchCode from "./components/WrongBatchCode";
 import OverlayWrapper from "./components/OverlayWrapper";
 import ThankYouMsg from "./components/ThankYouMsg";
-
+import Continue from "./components/Continue";
 
 const App = () => {
   return (
@@ -19,18 +19,7 @@ const App = () => {
             <Route path="more-information" element={<MoreInformation />} />
             <Route path="wrong-batch-code" element={<WrongBatchCode />} />
             <Route path="thank-you-msg" element={<ThankYouMsg />} />
-
-            <Route
-              path="/overlay"
-              element={
-                <OverlayWrapper isOverlayActive={true}>
-                  <BatchInput />
-                </OverlayWrapper>
-              }
-            />
-
-            {/* <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} /> */}
+            <Route path="help-kashmiri-farmers" element={<Continue />} />
           </Route>
         </Routes>
       </BrowserRouter>

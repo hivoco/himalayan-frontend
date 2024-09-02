@@ -64,7 +64,7 @@ const Welcome = () => {
 
       <div className="flex flex-col gap-y-3 ">
         <Button
-          onClick={() => navigate("/batch-input")}
+          onClick={() => navigate("/help-kashmiri-farmers")}
           className={` bg-primaryPurple max-w-[19.5rem] text-nowrap self-center py-[14px] rounded-[0.8625rem] border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem] px-[6.75rem] ${
             animate
               ? " opacity-100transition-all duration-500 delay-[2000ms] ease-in-out"

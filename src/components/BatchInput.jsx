@@ -126,7 +126,7 @@ const BatchInput = () => {
     <>
       {!isCameraOpened && (
         <OverlayWrapper isOverlayActive={isOverlayActive}>
-          <div className="h-svh bg-design-bg  bg-cover py-[2.125rem] flex bg-center bg-no-repeat bg-fixed  ">
+          {/* <div className="h-svh bg-design-bg  bg-cover py-[2.125rem] flex bg-center bg-no-repeat bg-fixed  ">
             <div className="flex flex-1 flex-col    gap-y-16">
               <div className="flex flex-1 flex-col gap-12">
                 <img
@@ -203,6 +203,96 @@ const BatchInput = () => {
                   </p>
                 </div>
 
+                <Button
+                  onClick={verifyBatch}
+                  className={`py-[14px]  max-w-[19.5rem] text-nowrap  rounded-[0.875rem] border-[2px]  border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem] px-[7.75rem] ${
+                    batchInput.trim() == "" ? "bg-gray-500" : "bg-primaryPurple"
+                  } `}
+                  title={"Submit"}
+                />
+              </div>
+            </div>
+          </div> */}
+          <div className="h-svh bg-design-bg  bg-cover py-[2.125rem] flex bg-center bg-no-repeat bg-fixed  ">
+            <div className="flex flex-1 flex-col    gap-y-16">
+              <div className="flex flex-1 flex-col gap-12">
+                <img
+                  onClick={() => navigate("/")}
+                  className="max-h-[3.25rem]  max-w-full  object-contain self-center"
+                  src="/images/himalayan-logo.png"
+                  alt="logo"
+                />
+
+                <div className="flex flex-1 flex-col gap-6 justify-center ">
+                  <h1 className="text-textPink  font-Poppins text-xl leading-[30px] font-bold  text-center text-nowrap">
+                    Know the farmer you helped <br /> support
+                  </h1>
+                  <img
+                    className="h-7 self-center"
+                    src="/images/curly-pattern.png"
+                    alt="curly-pattern image"
+                  />
+
+                  <div className="flex  flex-col justify-between  items-center">
+                    <div className="flex  flex-col gap-y-[6.5px]">
+                      <div className="flex gap-x-2 items-center">
+                        <p className="font-Poppins text-[10px] font-normal leading-[22px] text-left text-[#161616]  text-nowrap">
+                          Enter your Himalayan Kashmiri Saffron batch no. from
+                          pack
+                        </p>
+
+                        <Link className="w-3 h-3" to={"/more-information"}>
+                          <img
+                            className="hover:cursor-pointer"
+                            src="/svgs/info.svg"
+                            alt="info icon"
+                          />
+                        </Link>
+                      </div>
+
+                      <div className="relative ">
+                        <input
+                          onChange={(e) => setBatchInput(e.target.value)}
+                          className="outline-none w-full rounded-[10px] border border-textBlack py-[13.5px] pl-[10px] pr-9 bg-[#F8F8F859] font-Poppins font-semibold text-sm tracking-[0.06em] text-left text-[#373737] placeholder:text-[#373737]"
+                          placeholder="BATCH NUMBER"
+                          // inputMode="tel"
+                          type="text"
+                          value={batchInput}
+                          maxLength="10"
+                          minLength="1"
+                        />
+
+                        <img
+                          onClick={() => {
+                            startCamera();
+                            setIsCameraOpened(true);
+                          }}
+                          className="absolute right-3 top-1/2 -translate-y-1/2 hover:cursor-pointer"
+                          src="/svgs/camera.svg"
+                          alt="camera icon"
+                        />
+                      </div>
+
+                      <p
+                        // onClick={() => setIsOverlayActive(true)}
+                        className="font-Poppins text-[10px] ml-2 font-normal leading-[14px]  text-black/60 "
+                      >
+                        *Tap on camera to upload your batch code image
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* <p className="font-Poppins font-normal text-sm  text-center text-textBlack/80 ">
+                    With every pack you buy, you support <br /> farmers impacted
+                    by declining Saffron <br /> yields and help them receive
+                    <span className="text-textPink font-Poppins font-bold text-sm  text-center">
+                      &nbsp;training in <br /> modern farming practices.
+                    </span>
+                  </p> */}
+                </div>
+              </div>
+
+              <div className="flex  flex-col justify-between gap-y-20 items-center">
                 <Button
                   onClick={verifyBatch}
                   className={`py-[14px]  max-w-[19.5rem] text-nowrap  rounded-[0.875rem] border-[2px]  border-white/50 font-semibold text-[1.046875rem] leading-[1.354375rem] px-[7.75rem] ${
