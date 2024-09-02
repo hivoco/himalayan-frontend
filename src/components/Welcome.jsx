@@ -52,7 +52,7 @@ const Welcome = () => {
                 : " opacity-0 "
             }`}
           >
-            Himalayan continued its <br /> commitment to&nbsp;
+            Himalayan continues its <br /> commitment to&nbsp;
             <span className="text-textPink font-Poppins font-bold text-[17px] leading-[25px]  text-center">
               uplift the
               <br /> Himalayan communities.
