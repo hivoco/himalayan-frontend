@@ -45,17 +45,17 @@ const Welcome = () => {
           >
             This Himalayan Day
           </h1>
-
           <p
-            className={`font-Poppins font-normal text-[15px] leading-6  text-center text-black/80 ${
+            className={`font-Poppins font-normal text-[17px] leading-[25px]  text-center text-black/80 ${
               animate
                 ? " opacity-100transition-all duration-500 delay-1000 ease-in-out"
                 : " opacity-0 "
             }`}
           >
-            Himalayan takes another step <br /> to{" "}
-            <span className="text-textPink font-Poppins font-bold text-[15px] leading-6  text-center">
-              help the Himalayan <br /> Community.
+            Himalayan continued its <br /> commitment to&nbsp;
+            <span className="text-textPink font-Poppins font-bold text-[17px] leading-[25px]  text-center">
+              uplift the
+              <br /> Himalayan communities.
             </span>
           </p>
         </div>

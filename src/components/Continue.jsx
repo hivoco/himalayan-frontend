@@ -15,7 +15,7 @@ const Continue = () => {
               alt="logo"
             />
 
-            <div className="flex flex-1 flex-col gap-6 justify-center ">
+            <div className="flex flex-1 flex-col gap-6 justify-center -mt-3 ">
               <h1 className="text-textPink  font-Poppins text-xl leading-[30px] font-bold  text-center text-nowrap">
                 Join us in helping Kashmiri <br /> Saffron Farmers
               </h1>
