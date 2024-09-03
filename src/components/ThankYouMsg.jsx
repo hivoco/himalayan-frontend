@@ -50,9 +50,9 @@ const ThankYouMsg = () => {
               alt="person's image"
             />
 
-            <h2 className="w-full py-2 bottom-5 left-0  absolute font-Inter text-[12.71px] font-semibold leading-[15.4px] text-center text-white bg-black/70">
+            {/* <h2 className="w-full py-2 bottom-5 left-0  absolute font-Inter text-[12.71px] font-semibold leading-[15.4px] text-center text-white bg-black/70">
               {usermessage.name ? usermessage.name : "Farmer's Name"}
-            </h2>
+            </h2> */}
           </div>
         </div>
       </div>
@@ -72,8 +72,8 @@ const ThankYouMsg = () => {
           </div>
 
           <p className="font-Inter font-normal text-[15px] leading-[1.4rem] pt-3  text-center text-black/80">
-            Mr. {usermessage?.name} is grateful for your <br /> contribution in
-            the training he receives.
+            I am grateful for your contribution in <br /> the training I
+            receive.
           </p>
         </div>
 
